@@ -14,7 +14,7 @@ upload patch to this repo
 login as root user on pfsense appliance
 
 download patch from this git repo
-'fetch https://raw.githubusercontent.com/naturalis/pfsense-patches/master/services.inc.dhcp-innovaphone.patch'
+`fetch https://raw.githubusercontent.com/naturalis/pfsense-patches/master/services.inc.dhcp-innovaphone.patch`
 patch /etc/inc/services.inc /etc/inc/services.inc.dhcp-innovaphone.patch
 
 open and save dhcp server configuration in pfsense web interface
