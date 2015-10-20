@@ -1,43 +1,30 @@
---- services.inc.org    2015-10-14 12:25:01.000000000 +0200
-+++ services.inc        2015-10-14 12:46:53.000000000 +0200
-@@ -484,6 +484,40 @@
+--- /etc/inc/services.inc.org   2015-10-20 14:51:58.000000000 +0200
++++ /etc/inc/services.inc       2015-10-20 15:40:55.000000000 +0200
+@@ -484,6 +484,27 @@
  option domain-search-list code 119 = text;
  option arch code 93 = unsigned integer 16; # RFC4578
  {$custoptions}
-+class "vendor-classes" {
-+match option vendor-class-identifier;
-+}
 +option space innovaphone;
 +option innovaphone.h323-gatekeeper code 200 = array of ip-address;
 +option innovaphone.h323-gatekeeper-id code 201 = text;
 +option innovaphone.posix-tz code 202 = text;
 +option innovaphone.default-coder code 203 = text;
 +option innovaphone.language code 204 = text;
-+option innovaphone.location code 205 = text;
-+option innovaphone.vlan-id code 206 = unsigned integer 16;
-+option innovaphone.vlan-prio code 207 = unsigned integer 8;
-+option innovaphone.tos-bits code 208 = text;
-+option innovaphone.enbloc-dialing code 209 = unsigned integer 8;
-+option innovaphone.dialtone-type code 210 = unsigned integer 8;
-+option innovaphone.faststart code 211 = unsigned integer 8;
-+option innovaphone.h245-tunneling code 212 = unsigned integer 8;
-+option innovaphone.clock-type code 213 = unsigned integer 8;
-+option innovaphone.static-routes code 214 = text;
 +option innovaphone.update-url code 215 = text;
 +option innovaphone.update-poll-interval code 216 = unsigned integer 16;
-+option innovaphone.ldap-directory code 217 = text;
-+option innovaphone.local-networks code 218 = text;
 +option innovaphone.voip-protocol code 220 = text;
-+subclass "vendor-classes" "innovaphone" {
++ 
++class "innovaphone" {
++    match if option vendor-class-identifier = "1.3.6.1.4.1.6666";
++}
++
 +vendor-option-space innovaphone;
 +option innovaphone.h323-gatekeeper 10.21.1.84;
-+option innovaphone.default-coder "G711A,30"; 
++option innovaphone.default-coder "G711,30";
 +option innovaphone.language "dut";
-+option innovaphone.vlan-id 0x01;
-+option innovaphone.dialtone-type 0x12;
 +option innovaphone.update-url "http://10.21.1.84/drive/cf0/update/";
-+option innovaphone.voip-protocol "H.232/TLS";
-+}
++option innovaphone.update-poll-interval 0x168;
++option innovaphone.voip-protocol "H.323/TLS";
  default-lease-time 7200;
  max-lease-time 86400;
  log-facility local7;

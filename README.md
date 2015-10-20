@@ -22,6 +22,6 @@ download patch from this git repo:
 
 patch template:
 
-`patch /etc/inc/services.inc /etc/inc/services.inc.dhcp-innovaphone.patch`
+`patch /etc/inc/services.inc services.inc.dhcp-innovaphone.patch`
 
 open and save dhcp server configuration in pfsense web interface
