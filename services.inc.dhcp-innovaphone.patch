@@ -4,12 +4,6 @@
  option domain-search-list code 119 = text;
  option arch code 93 = unsigned integer 16; # RFC4578
  {$custoptions}
---- /etc/inc/services.inc.org   2015-10-20 14:51:58.000000000 +0200
-+++ /etc/inc/services.inc       2015-10-20 15:40:55.000000000 +0200
-@@ -484,6 +484,27 @@
- option domain-search-list code 119 = text;
- option arch code 93 = unsigned integer 16; # RFC4578
- {$custoptions}
 +option space innovaphone;
 +option innovaphone.default-coder code 203 = text;
 +option innovaphone.update-url code 215 = text;
